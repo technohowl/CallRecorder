@@ -1,0 +1,3 @@
+/Volumes/MyPassport2TB/Projects/Android/Tarun/Libs/CallRecorder/app/.externalNativeBuild/cmake/release/x86_64/CMakeFiles/edit_cache.dir
+/Volumes/MyPassport2TB/Projects/Android/Tarun/Libs/CallRecorder/app/.externalNativeBuild/cmake/release/x86_64/CMakeFiles/rebuild_cache.dir
+/Volumes/MyPassport2TB/Projects/Android/Tarun/Libs/CallRecorder/app/.externalNativeBuild/cmake/release/x86_64/CMakeFiles/echo.dir

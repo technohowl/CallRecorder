@@ -1,7 +1,9 @@
 package com.aykuttasil.callrecord.receiver;
 
 import android.content.Context;
+import android.content.Intent;
 import android.media.MediaRecorder;
+import android.os.IBinder;
 import android.util.Log;
 
 import com.aykuttasil.callrecord.CallRecord;
@@ -17,7 +19,7 @@ import java.util.Date;
 public class CallRecordReceiver extends PhoneCallReceiver {
 
 
-    private static final String TAG = CallRecordReceiver.class.getSimpleName();
+    private static final String TAG = "CallRecord";
 
     public static final String ACTION_IN = "android.intent.action.PHONE_STATE";
     public static final String ACTION_OUT = "android.intent.action.NEW_OUTGOING_CALL";
@@ -32,6 +34,11 @@ public class CallRecordReceiver extends PhoneCallReceiver {
         this.callRecord = callRecord;
     }
 
+    public CallRecordReceiver() {
+        super();
+
+    }
+
     @Override
     protected void onIncomingCallReceived(Context context, String number, Date start) {
 
@@ -39,6 +46,13 @@ public class CallRecordReceiver extends PhoneCallReceiver {
 
     @Override
     protected void onIncomingCallAnswered(Context context, String number, Date start) {
+        Log.w("CallRecord", "onIncomingCallAnswered");
+
+        this.callRecord = new CallRecord.Builder(context)
+            .setRecordFileName("CallRecord")
+            .setRecordDirName("CallRecorder")
+            .setShowSeed(true)
+            .build();
         startRecord(context, "incoming", number);
     }
 
@@ -49,6 +63,15 @@ public class CallRecordReceiver extends PhoneCallReceiver {
 
     @Override
     protected void onOutgoingCallStarted(Context context, String number, Date start) {
+        Log.w("CallRecord", "onOutgoingCallStarted");
+        this.callRecord = new CallRecord.Builder(context)
+            .setRecordFileName("CallRecord")
+            .setRecordDirName("CallRecorder")
+            .setShowSeed(true)
+            .setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB) // optional & default value
+            .setOutputFormat(MediaRecorder.OutputFormat.AMR_NB) // optional & default value
+            .setAudioSource(MediaRecorder.AudioSource.VOICE_COMMUNICATION) // optional & default value
+            .build();
         startRecord(context, "outgoing", number);
     }
 
@@ -146,6 +169,12 @@ public class CallRecordReceiver extends PhoneCallReceiver {
             recorder.setAudioEncoder(audio_encoder);
             recorder.setOutputFile(audiofile.getAbsolutePath());
             recorder.prepare();
+
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
 
             recorder.start();
 

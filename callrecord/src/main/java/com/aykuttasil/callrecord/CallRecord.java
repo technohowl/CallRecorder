@@ -17,7 +17,7 @@ import com.aykuttasil.callrecord.service.CallRecordService;
 
 public class CallRecord {
 
-    private static final String TAG = CallRecord.class.getSimpleName();
+    private static final String TAG = "CallRecord";
 
     public static final String PREF_SAVE_FILE = "PrefSaveFile";
     public static final String PREF_FILE_NAME = "PrefFileName";

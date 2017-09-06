@@ -20,6 +20,10 @@ public abstract class PhoneCallReceiver extends BroadcastReceiver {
     private static boolean isIncoming;
     private static String savedNumber;  //because the passed incoming is only valid in ringing
 
+    public PhoneCallReceiver() {
+        super();
+    }
+
     @Override
     public void onReceive(Context context, Intent intent) {
 

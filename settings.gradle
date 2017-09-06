@@ -1,1 +1,1 @@
-include ':app', ':callrecord'
+include ':app'

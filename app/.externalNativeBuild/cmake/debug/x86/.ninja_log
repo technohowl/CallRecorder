@@ -1,0 +1,7 @@
+# ninja log v5
+25	3595	0	CMakeFiles/echo.dir/audio_common.cpp.o	391d54ac15be7b74
+26	3601	0	CMakeFiles/echo.dir/audio_recorder.cpp.o	78c72a69628fbab1
+26	3604	0	CMakeFiles/echo.dir/audio_player.cpp.o	e5f377b7f659df8b
+27	3663	0	CMakeFiles/echo.dir/debug_utils.cpp.o	ee738660a18fcf56
+26	3664	0	CMakeFiles/echo.dir/audio_main.cpp.o	dc23d8bfb4eb0be9
+3664	4177	0	/Volumes/MyPassport2TB/Projects/Android/Tarun/Libs/CallRecorder/app/build/intermediates/cmake/debug/obj/x86/libecho.so	57f759f77d9ecd92

@@ -1,0 +1,30 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <SwitchPreference
+      android:defaultValue="true"
+      android:key="example_switch"
+      android:summary="@string/pref_description_social_recommendations"
+      android:title="@string/pref_title_social_recommendations"/>
+
+
+  <SwitchPreference
+      android:dependency="details_switch"
+      android:defaultValue="true"
+      android:key="incoming_switch"
+      android:summary="Allow app to record incoming calls"
+      android:title="Record incoming calls"/>
+
+  <SwitchPreference
+      android:dependency="details_switch"
+      android:defaultValue="true"
+      android:key="outgoing_switch"
+      android:summary="Allow app to record outgoing calls"
+      android:title="Record outgoing calls"/>
+
+
+  <Preference
+      android:key="rateapp"
+      android:summary="Give your feedback in Play Store"
+      android:title="Rate App"/>
+
+</PreferenceScreen>

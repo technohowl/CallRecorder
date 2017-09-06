@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:cacheColorHint="@android:color/transparent"
+    android:background="@android:color/transparent"
+    android:padding="@dimen/padding"
+    android:orientation="horizontal"
+    android:id="@+id/rootCatRow"
+    >
+
+
+  <FrameLayout
+      android:layout_gravity="center"
+      android:id="@+id/frame"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/operatorImage"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        app:civ_border_width="2dp"
+        app:civ_border_color="#FF000000"
+        />
+
+
+
+
+  </FrameLayout>
+  <LinearLayout
+      android:layout_weight="1"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="@dimen/padding"
+      android:orientation="vertical"
+      android:id="@+id/cardLayout"
+      >
+
+    <TextView
+        android:id="@+id/callName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left|center_vertical"
+        android:gravity="left"
+        android:maxLines="1"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+
+        />
+
+    <LinearLayout
+        android:layout_marginTop="@dimen/small_padding"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        >
+
+      <ImageView
+          android:layout_width="20dp"
+          android:layout_height="20dp"
+          android:layout_gravity="center_vertical"
+          android:id="@+id/callTypeImage"
+          android:src="@android:drawable/sym_call_incoming"
+          />
+      <TextView
+          android:id="@+id/callNumber"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center_vertical"
+          android:layout_marginLeft="@dimen/small_padding"
+          android:ellipsize="end"
+          android:gravity="left"
+          android:maxLines="1"
+          android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+          />
+
+
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text=" "
+          />
+      <TextView
+          android:id="@+id/callTime"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center_vertical"
+          android:layout_marginLeft="@dimen/small_padding"
+          android:ellipsize="end"
+          android:gravity="left"
+          android:maxLines="1"
+          android:text="02:23"
+          android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+          />
+      <TextView
+          android:layout_marginLeft="@dimen/small_padding"
+          android:id="@+id/callDuration"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_gravity="left|center_vertical"
+          android:gravity="left"
+          android:maxLines="1"
+          android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+
+          />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginTop="@dimen/small_padding"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center_vertical"
+        android:gravity="center_vertical"
+        >
+
+      <TextView
+          android:id="@+id/callOperator"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center_vertical"
+          android:ellipsize="end"
+          android:gravity="left"
+          android:maxLines="1"
+          android:text="9880452000"
+          android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+          />
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text=" "
+          />
+      <TextView
+          android:id="@+id/callState"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center_vertical"
+          android:layout_marginLeft="@dimen/small_padding"
+          android:ellipsize="end"
+          android:gravity="left"
+          android:maxLines="1"
+          android:text="02:23"
+          android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+          />
+
+      </LinearLayout>
+
+
+  </LinearLayout>
+  <LinearLayout
+      android:visibility="gone"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="@dimen/small_padding"
+      android:orientation="vertical"
+      android:layout_gravity="center_vertical"
+      android:gravity="center_vertical"
+      >
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:id="@+id/moreView"
+        android:layout_gravity="center_vertical"
+        android:background="@android:drawable/ic_menu_more"
+        />
+  </LinearLayout>
+</LinearLayout>

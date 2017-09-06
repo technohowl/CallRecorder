@@ -1,12 +1,20 @@
 package com.aykuttasil.callrecorder;
 
+import android.Manifest;
+import android.media.MediaRecorder;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 
-import com.aykuttasil.callrecord.CallRecord;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+import permissions.dispatcher.NeedsPermission;
+import permissions.dispatcher.RuntimePermissions;
 
+@RuntimePermissions
 public class MainActivity extends AppCompatActivity {
 
     private static String TAG = MainActivity.class.getSimpleName();
@@ -21,19 +29,18 @@ public class MainActivity extends AppCompatActivity {
         //callRecord = CallRecord.init(this);
 
         callRecord = new CallRecord.Builder(this)
-                .setRecordFileName("CallRecorderFile")
-                .setRecordDirName("CallRecorderDir")
+                .setRecordFileName("CallRecord")
+                .setRecordDirName("CallRecorder")
                 .setShowSeed(true)
                 .build();
 
         callRecord.changeReceiver(new MyCallRecordReceiver(callRecord));
+        callRecord.enableSaveFile();
 
-        //callRecord.enableSaveFile();
+        MainActivityPermissionsDispatcher.getStorageWithCheck(this);
 
 
-
-        /*
-        callRecord = new CallRecord.Builder(this)
+       /* callRecord = new CallRecord.Builder(this)
                 .setRecordFileName("Record_" + new SimpleDateFormat("ddMMyyyyHHmmss", Locale.US).format(new Date()))
                 .setRecordDirName("CallRecord")
                 .setRecordDirPath(Environment.getExternalStorageDirectory().getPath())
@@ -41,10 +48,20 @@ public class MainActivity extends AppCompatActivity {
                 .setOutputFormat(MediaRecorder.OutputFormat.AMR_NB)
                 .setAudioSource(MediaRecorder.AudioSource.VOICE_COMMUNICATION)
                 .setShowSeed(true)
-                .buildService();
+                .build();*/
 
-        callRecord.startCallRecordService();
-        */
+
+
+    }
+
+    @NeedsPermission(value = {Manifest.permission.WRITE_EXTERNAL_STORAGE,
+        Manifest.permission.READ_PHONE_STATE,
+        Manifest.permission.RECORD_AUDIO,
+        Manifest.permission.PROCESS_OUTGOING_CALLS})
+    void getStorage() {
+        // ...
+        //callRecord.startCallRecordService();
+        //CallRecord.initService(this);
 
     }
 

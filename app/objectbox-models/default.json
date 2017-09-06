@@ -1,0 +1,63 @@
+{
+  "_note1": "KEEP THIS FILE! Check it into a version control system (VCS) like git.",
+  "_note2": "ObjectBox manages crucial IDs for your object model. See docs for details.",
+  "_note3": "If you have VCS merge conflicts, you must resolve them according to ObjectBox docs.",
+  "entities": [
+    {
+      "id": "2:4055980756400323710",
+      "lastPropertyId": "8:3583006734925619226",
+      "name": "CallRecordModel",
+      "properties": [
+        {
+          "id": "1:1367652612913230614",
+          "name": "id"
+        },
+        {
+          "id": "2:4749828945476902123",
+          "name": "callNote"
+        },
+        {
+          "id": "3:4410207625736367921",
+          "name": "callerNumber"
+        },
+        {
+          "id": "4:2289281767094106881",
+          "name": "recordLocation"
+        },
+        {
+          "id": "5:4604761462602796278",
+          "name": "callDuration"
+        },
+        {
+          "id": "6:5795549532265641554",
+          "name": "recordedDate"
+        },
+        {
+          "id": "7:2215154516123247225",
+          "name": "callType"
+        },
+        {
+          "id": "8:3583006734925619226",
+          "name": "callStatus"
+        }
+      ]
+    }
+  ],
+  "lastEntityId": "2:4055980756400323710",
+  "lastIndexId": "0:0",
+  "lastSequenceId": "0:0",
+  "modelVersion": 2,
+  "retiredEntityUids": [
+    6375661922129492308
+  ],
+  "retiredIndexUids": [],
+  "retiredPropertyUids": [
+    9067256841426365751,
+    4261183404075669764,
+    7132357815312200962,
+    2231980900553334852,
+    1393369317161440895,
+    2331202979352904865
+  ],
+  "version": 1
+}
